@@ -9,24 +9,42 @@ div.dice {
   align-self: inherit;
   margin: auto;
 }
-.middle {
-    float: inline-start;
-    width: 66%;
-    color: #1b1b1b;
-      font-size:20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    align-content: center;
-      text-align:center;
-    position: relative;
+
+.sectionLeft {
+  float: left;
+  width: 17%;
+  color: #1b1b1b;
+	font-size:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  align-content: center;
+	text-align:center;
 }
-.left {
-    float: left;
-    width: 17%;
-    color: #1b1b1b;
-      font-size:20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    align-content: center;
-      text-align:center;
+.sectionMiddle{
+  float: inline-start;
+  width: 66%;
+  color: #1b1b1b;
+	font-size:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  align-content: center;
+	text-align:center;
+  position: relative;
+}
+.sectionRight {
+  width: 17%;
+  color: #1b1b1b;
+	font-size:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  align-content: center;
+	text-align:center;
+  display: inline-block;
+  text-align: left;
+}
+
+.status {color: black;}
+.bruh {align-content: center;}
+document.writeln {
+  font-size: 100px
 }
