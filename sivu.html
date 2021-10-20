@@ -6,18 +6,17 @@
 <body>
     <div class="sectionLeft">
         tempscore: <span id="tempScore">0</span> <br>
+        pisteet: <span id="pisteet">0</span> <br>
+        pelaajat: <span id="pelaajat"> </span> <br>
         <document.writeln()>
     </div>
       <div class="sectionMiddle">
         <div class="main">
           <div id="die1" class="dice">0</div>
-          <button onclick="rollDice()">Roll Dice</button> <br>
-          <button onclick="endRound()">End round</button>
+          <button onclick="rollDice()">Heitä noppaa</button> <br>
+          <button onclick="endTurn()">Lopeta vuoro</button>
         </div>
           <span class="bruh" id="status"></span>
-      </div>
-      <div class="sectionRight">
-        <div class ="hh" id="his"></div>
       </div>
 <script src="peli.js"></script>
 </body>

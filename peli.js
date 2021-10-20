@@ -1,21 +1,23 @@
 var tempScore = 0;
-var round = 0;
+var round = 1;
 var turn = 1;
 var pisteet = 0;
 var nimet = [];
 var i;
 var o = 1;
 var maara = [];
-var result= 0;
+
 
 
 
  maara.push ((prompt("Syötä pelaajien määrä numerona", "")));
 
 for (i = 0; i < maara; i++) {
+  var  pisteet1 = [];
     nimet.push ((prompt("Syötä pelaajan " + o++ + " nimi" , "")));
 }
 for (let i = 0; i < nimet.length; i++) {
+  document.getElementById("pelaajat").innerHTML ="<br>"+ `${nimet[i]}` + " pisteet: " + pisteet +"<br>";
   document.writeln(`${nimet[i]}` + " pisteet: " + pisteet +"<br>");
 }
 
@@ -24,8 +26,6 @@ for (let i = 0; i < nimet.length; i++) {
 
 
 function rollDice(){
-  var result = 0;
-  var content = document.createTextNode("Round: " + round + " Turn: "+ turn + " Points: " + result);
 
     var die1 = document.getElementById("die1");
     var status = document.getElementById("status");
@@ -35,16 +35,32 @@ function rollDice(){
 
  if (d1==1){
   document.getElementById("status").innerHTML = "Sait 1. Vuoro vaihtuu";
-    result=result +0;
+  
     tempScore=0;
-    round=round +1;
-    addScore(result)
+    turn=turn +1;
+    document.getElementById("tempScore").innerHTML = tempScore;
    
 } else {
   document.getElementById("status").innerHTML = "Sait "+d1+".";
-    result=result +d1;
-    tempScore=tempScore+result;
+    tempScore=tempScore+d1;
     round=round +1;
-
+    document.getElementById("tempScore").innerHTML = tempScore;
 }
+}
+function endTurn() {
+  document.getElementById("status").innerHTML = "Vuoro vaihtuu";
+  turn = turn + 1;
+  pisteet = pisteet + tempScore;
+  tempScore=0;
+  document.getElementById("pisteet").innerHTML = pisteet;
+  document.getElementById("tempScore").innerHTML = tempScore;
+if (pisteet >= 100) {
+  alert("Pelaaja" + nimi + "voitti pelin")
+  location.reload(); 
+    } else if (turn > maara){
+    turn = 1;
+    round = round + 1;
+    tempScore=0;
+    document.getElementById("status").innerHTML = "Uusi kierros";
+  }
 }
