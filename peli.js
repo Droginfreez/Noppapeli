@@ -1,26 +1,41 @@
 var tempScore = 0;
 var round = 1;
 var turn = 1;
-var pisteet = 0;
+var pisteet1= 0;
+var pisteet2= 0;
+var pisteet3= 0;
+var pisteet4= 0;
+var pisteet5= 0;
+var pisteet6= 0;
+var pisteet7= 0;
+var pisteet8= 0;
 var nimet = [];
 var i;
 var o = 1;
 var maara = [];
+document.addEventListener('DOMContentLoaded', function()  {
+  pelaajienMaara();
+}, false);
 
 
+function pelaajienMaara() {
+ maara.push ((prompt("Syötä pelaajien määrä numerona, maks 8", "")));
+pelaajienNimet();
+}
 
-
- maara.push ((prompt("Syötä pelaajien määrä numerona", "")));
-
+function pelaajienNimet() {
+  
 for (i = 0; i < maara; i++) {
   var  pisteet1 = [];
     nimet.push ((prompt("Syötä pelaajan " + o++ + " nimi" , "")));
+   
 }
-for (let i = 0; i < nimet.length; i++) {
-  document.getElementById("pelaajat").innerHTML ="<br>"+ `${nimet[i]}` + " pisteet: " + pisteet +"<br>";
-  document.writeln(`${nimet[i]}` + " pisteet: " + pisteet +"<br>");
+alert("moro")
+lisaaPelaajat();
 }
 
+
+  
 
 
 
@@ -31,7 +46,7 @@ function rollDice(){
     var status = document.getElementById("status");
     var d1 = Math.floor(Math.random() * 6) + 1;
     die1.innerHTML = d1;
-
+    
 
  if (d1==1){
   document.getElementById("status").innerHTML = "Sait 1. Vuoro vaihtuu";
@@ -64,3 +79,14 @@ if (pisteet >= 100) {
     document.getElementById("status").innerHTML = "Uusi kierros";
   }
 }
+function lisaaPelaajat() {
+  for(let a = 1; a <= pelaajia; a++){
+    var id = ("pelaaja-" + a);
+    var pointsID = ("pisteet-" + a);
+    document.getElementById(id).innerHTML = nimet[(a - 1)];
+
+    var pistemaara = 0;
+    document.getElementById(pointsID).innerHTML = pistemaara;
+}
+}
+
