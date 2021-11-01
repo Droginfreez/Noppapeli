@@ -30,12 +30,24 @@ for (i = 0; i < maara; i++) {
     nimet.push ((prompt("Syötä pelaajan " + o++ + " nimi" , "")));
    
 }
-alert("moro")
+
 lisaaPelaajat();
+paivitaPisteet();
 }
 
 
   
+
+function lisaaPelaajat() {
+  for(let a = 1; a <= maara; a++){
+    var id = ("pelaaja-" + a);
+    var pointsID = ("pisteet-" + a);
+    document.getElementById(id).innerHTML = nimet[(a - 1)];
+
+    var pistemaara = 0;
+    document.getElementById(pointsID).innerHTML = pistemaara;
+}
+}
 
 
 
@@ -50,43 +62,87 @@ function rollDice(){
 
  if (d1==1){
   document.getElementById("status").innerHTML = "Sait 1. Vuoro vaihtuu";
-  
     tempScore=0;
     turn=turn +1;
-    document.getElementById("tempScore").innerHTML = tempScore;
+    endTurn();
    
 } else {
   document.getElementById("status").innerHTML = "Sait "+d1+".";
     tempScore=tempScore+d1;
-    round=round +1;
     document.getElementById("tempScore").innerHTML = tempScore;
 }
 }
+
+
 function endTurn() {
+  
   document.getElementById("status").innerHTML = "Vuoro vaihtuu";
+  lisaapisteet(tempScore); 
   turn = turn + 1;
-  pisteet = pisteet + tempScore;
   tempScore=0;
-  document.getElementById("pisteet").innerHTML = pisteet;
   document.getElementById("tempScore").innerHTML = tempScore;
-if (pisteet >= 100) {
-  alert("Pelaaja" + nimi + "voitti pelin")
-  location.reload(); 
-    } else if (turn > maara){
-    turn = 1;
+  document.getElementById("vuoro").innerHTML = turn;
+
+    } if (turn >= maara){
     round = round + 1;
     tempScore=0;
     document.getElementById("status").innerHTML = "Uusi kierros";
   }
-}
-function lisaaPelaajat() {
-  for(let a = 1; a <= pelaajia; a++){
-    var id = ("pelaaja-" + a);
-    var pointsID = ("pisteet-" + a);
-    document.getElementById(id).innerHTML = nimet[(a - 1)];
 
-    var pistemaara = 0;
-    document.getElementById(pointsID).innerHTML = pistemaara;
-}
-}
 
+
+function lisaapisteet(pisteet){
+
+  if(vuoro == 1){
+      pisteet1 += tempScore;
+  }
+  if(vuoro == 2){
+      pisteet2 += tempScore;
+  }
+  if(vuoro == 3){
+      pisteet3 += tempScore;
+  }
+  if(vuoro == 4){
+      pisteet4 += tempScore;
+  }
+  if(vuoro == 5){
+      pisteet5 += tempScore;
+  }
+  if(vuoro == 6){
+      pisteet6 += tempScore;
+  }
+  if(vuoro == 7){
+      pisteet7 += tempScore;
+  }
+  if(vuoro == 8){
+      pisteet8 += tempScore;
+  }
+  paivitaPisteet();
+}
+function paivitaPisteet(){
+  if(maara >= 8){
+      document.getElementById("pisteet-8").innerHTML = pisteet8;
+  }
+  if(maara >= 7){
+      document.getElementById("pisteet-7").innerHTML = pisteet7;
+  }
+  if(maara >= 6){
+      document.getElementById("pisteet-6").innerHTML = pisteet6;
+  }
+  if(maara >= 5){
+      document.getElementById("pisteet-5").innerHTML = pisteet5;
+  }
+  if(maara >= 4){
+      document.getElementById("pisteet-4").innerHTML = pisteet4;
+  }
+  if(maara >= 3){
+      document.getElementById("pisteet-3").innerHTML = pisteet3;
+  }
+  if(maara >= 2){
+      document.getElementById("pisteet-2").innerHTML = pisteet2;
+  }
+  if(maara >= 1){
+      document.getElementById("pisteet-1").innerHTML = pisteet1;
+  }
+
+}
