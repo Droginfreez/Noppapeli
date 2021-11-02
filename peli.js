@@ -24,7 +24,8 @@ pelaajienNimet();
 }
 
 function pelaajienNimet() {
-  
+  if(maara > 8) {alert("pelissä voi olla enintään 8 pelaajaa!")
+return false;} else {}
 for (i = 0; i < maara; i++) {
   var  pisteet1 = [];
     nimet.push ((prompt("Syötä pelaajan " + o++ + " nimi" , "")));
@@ -59,11 +60,10 @@ function rollDice(){
     var d1 = Math.floor(Math.random() * 6) + 1;
     die1.innerHTML = d1;
     
+    
 
  if (d1==1){
-  document.getElementById("status").innerHTML = "Sait 1. Vuoro vaihtuu";
     tempScore=0;
-    turn=turn +1;
     endTurn();
    
 } else {
@@ -77,44 +77,54 @@ function rollDice(){
 function endTurn() {
   
   document.getElementById("status").innerHTML = "Vuoro vaihtuu";
-  lisaapisteet(tempScore); 
-  turn = turn + 1;
-  tempScore=0;
-  document.getElementById("tempScore").innerHTML = tempScore;
-  document.getElementById("vuoro").innerHTML = turn;
+  lisaapisteet(tempScore);
+  voittiko();
+  if (turn >= maara) {
+  vuoronVaihto();
+    } else {
+        turn = turn +1;
+        tempScore=0;
+        document.getElementById("tempScore").innerHTML = tempScore;
+        document.getElementById("turn").innerHTML = turn;
+          }
+}
 
-    } if (turn >= maara){
-    round = round + 1;
-    tempScore=0;
-    document.getElementById("status").innerHTML = "Uusi kierros";
-  }
+function vuoronVaihto() {
+
+        round = round + 1;
+        tempScore=0;
+        turn = 1;
+        document.getElementById("status").innerHTML = "Uusi kierros";
+        document.getElementById("round").innerHTML = round;
+        document.getElementById("tempScore").innerHTML = tempScore;
+      document.getElementById("turn").innerHTML = turn;
+    }   
 
 
+function lisaapisteet(tempScore){
 
-function lisaapisteet(pisteet){
-
-  if(vuoro == 1){
+  if(turn == 1){
       pisteet1 += tempScore;
   }
-  if(vuoro == 2){
+  if(turn == 2){
       pisteet2 += tempScore;
   }
-  if(vuoro == 3){
+  if(turn == 3){
       pisteet3 += tempScore;
   }
-  if(vuoro == 4){
+  if(turn == 4){
       pisteet4 += tempScore;
   }
-  if(vuoro == 5){
+  if(turn == 5){
       pisteet5 += tempScore;
   }
-  if(vuoro == 6){
+  if(turn == 6){
       pisteet6 += tempScore;
   }
-  if(vuoro == 7){
+  if(turn == 7){
       pisteet7 += tempScore;
   }
-  if(vuoro == 8){
+  if(turn == 8){
       pisteet8 += tempScore;
   }
   paivitaPisteet();

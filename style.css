@@ -30,6 +30,7 @@ div.dice {
   align-content: center;
 	text-align:center;
   position: relative;
+
 }
 .sectionRight {
   width: 17%;
@@ -47,4 +48,12 @@ div.dice {
 .bruh {align-content: center;}
 document.writeln {
   font-size: 100px
+}
+.pelaaja{
+  float: left;
+  padding: 3%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #1b1b1b;
+	font-size:20px;
 }
