@@ -156,3 +156,38 @@ function paivitaPisteet(){
   }
 
 }
+function voittiko() {
+    if(pisteet1 >= 100){
+       alert("Pelaaja " + nimet[0] + " voitti pelin!")
+       location. reload()
+    }
+    if(pisteet2 >= 100){
+        alert("Pelaaja " + nimet[1] + " voitti pelin!")
+        location. reload()
+    }
+    if(pisteet3 >= 100){
+        alert("Pelaaja " + nimet[2] + " voitti pelin!")
+        location. reload()
+    }
+    if(pisteet4 >= 100){
+        alert("Pelaaja " + nimet[3] + " voitti pelin!")
+        location. reload()
+    }
+    if(pisteet5 >= 100){
+        alert("Pelaaja " + nimet[4] + " voitti pelin!")
+        location. reload()
+    }
+    if(pisteet6 >= 100){
+        alert("Pelaaja " + nimet[5] + " voitti pelin!")
+        location. reload()
+    }
+    if(pisteet7 >= 100){
+        alert("Pelaaja " + nimet[6] + " voitti pelin!")
+        location. reload()
+    }
+    if(pisteet8 >= 100){
+        alert("Pelaaja " + nimet[7] + " voitti pelin!")
+        location. reload()
+    }
+    
+}
