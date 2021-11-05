@@ -12,7 +12,7 @@ div.dice {
 
 .sectionLeft {
   float: left;
-  width: 17%;
+  width: 20%;
   color: #1b1b1b;
 	font-size:20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -22,7 +22,7 @@ div.dice {
 }
 .sectionMiddle{
   float: inline-start;
-  width: 66%;
+  width: 30%;
   color: #1b1b1b;
 	font-size:20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -33,7 +33,7 @@ div.dice {
 
 }
 .sectionRight {
-  width: 17%;
+  width: 50%;
   color: #1b1b1b;
 	font-size:20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -45,10 +45,6 @@ div.dice {
 }
 
 .status {color: black;}
-.bruh {align-content: center;}
-document.writeln {
-  font-size: 100px
-}
 .pelaaja{
   float: left;
   padding: 3%;
@@ -57,3 +53,35 @@ document.writeln {
   color: #1b1b1b;
 	font-size:20px;
 }
+.peli1 {
+  display:grid;
+  text-align: center;
+  border: 3px solid;
+}
+  
+
+.peli2 {
+  display:grid;
+  text-align: center;
+  border: 3px solid;
+}
+h1 {
+  font-size:40px;
+  text-align: center;
+  
+}
+a {
+  padding:70px;
+  text-align: center;
+}
+a.tayta {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+.peli1:hover {
+background-color: rgb(168, 228, 223);
+}
+.peli2:hover {
+  background-color: rgb(168, 228, 223);
+  }
