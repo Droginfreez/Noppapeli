@@ -13,6 +13,7 @@ var nimet = [];
 var i;
 var o = 1;
 var maara = [];
+var tuplia = 0;
 document.addEventListener('DOMContentLoaded', function()  {
   pelaajienMaara();
 }, false);
@@ -56,20 +57,41 @@ function lisaaPelaajat() {
 function rollDice(){
 
     var die1 = document.getElementById("die1");
+    var die2 = document.getElementById("die2");
     var status = document.getElementById("status");
     var d1 = Math.floor(Math.random() * 6) + 1;
+    var d2 = Math.floor(Math.random() * 6) + 1;
     die1.innerHTML = d1;
+    die2.innerHTML = d2;
+    var noppientulos = d1 + d2;
     
     
 
- if (d1==1){
+if(d1 == d2 && noppientulos !=2){
+    document.getElementById("status").innerHTML = "Tuplat, tuplapisteet!";
+    tempScore=tempScore + noppientulos*2;
+    tuplia = tuplia +1;
+    document.getElementById("tempScore").innerHTML = tempScore;
+    document.getElementById("tuplat").innerHTML = tuplia;
+    tuplat();
+    }
+else if (d1==d2 && noppientulos==2){
+    document.getElementById("status").innerHTML = "Tupla ykköset, saat 25 pistettä!"; 
+    tempScore = tempScore +25;
+    document.getElementById("tempScore").innerHTML = tempScore;
+    tuplia=tuplia+1;
+    document.getElementById("tuplat").innerHTML = tuplia;
+    tuplat();
+}
+ else if (d1==1 || d2==1){
     document.getElementById("status").innerHTML = "Sait 1, vuoro vaihtuu.";
     tempScore=0;
     endTurn();
-   
 } else {
-  document.getElementById("status").innerHTML = "Sait "+d1+".";
-    tempScore=tempScore+d1;
+  document.getElementById("status").innerHTML = "Sait " + noppientulos + ".";
+    tempScore=tempScore + noppientulos;
+    tuplia = 0;
+    document.getElementById("tuplat").innerHTML = tuplia;
     document.getElementById("tempScore").innerHTML = tempScore;
 }
 }
@@ -77,21 +99,24 @@ function rollDice(){
 
 function endTurn() {
   
-  document.getElementById("status").innerHTML = "Vuoro vaihtuu";
+  
   lisaapisteet(tempScore);
   voittiko();
+  tuplia = 0;
+  document.getElementById("tuplat").innerHTML = tuplia;
   if (turn >= maara) {
   vuoronVaihto();
     } else {
+        document.getElementById("status").innerHTML = "Vuoro vaihtuu";
         turn = turn +1;
         tempScore=0;
+        
         document.getElementById("tempScore").innerHTML = tempScore;
         document.getElementById("turn").innerHTML = turn;
           }
 }
 
 function vuoronVaihto() {
-
         round = round + 1;
         tempScore=0;
         turn = 1;
@@ -101,6 +126,29 @@ function vuoronVaihto() {
       document.getElementById("turn").innerHTML = turn;
     }   
 
+    function tuplat() {
+        if (tuplia >= 3 && turn < maara) {
+            document.getElementById("status").innerHTML = "Sait 3 tuplaa peräkkäin, vuoro vaihtuu etkä saa pisteitä!";
+            tempScore = 0;
+            turn = turn +1;
+           tuplia = 0;
+           document.getElementById("tuplat").innerHTML = tuplia;
+        document.getElementById("tempScore").innerHTML = tempScore;
+      document.getElementById("turn").innerHTML = turn;
+            
+        } else if (tuplia >= 3 && turn >= maara) {
+            document.getElementById("status").innerHTML = "Sait 3 tuplaa peräkkäin, uusi kierros alkaa etkä saa pisteitä!";
+            tempScore = 0;
+            turn = 1;
+            round = round +1;
+           tuplia = 0;
+           document.getElementById("tuplat").innerHTML = tuplia;
+        document.getElementById("tempScore").innerHTML = tempScore;
+      document.getElementById("turn").innerHTML = turn;
+      document.getElementById("round").innerHTML = round;
+        }
+        false;
+    }
 
 function lisaapisteet(tempScore){
 

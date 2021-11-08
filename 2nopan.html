@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Kahden nopan sika</title>
+</head>
+<body>
+    <div class="sectionLeft">
+       vuoron pisteet: <span id="tempScore">0</span> <br>
+        kierros: <span id="round">1</span> <br>
+        vuoro: <span id="turn">1</span> <br>
+        tuplia: <span id="tuplat">0</span>
+    </div>
+    <div class="sectionRight">
+        <div class="pelaaja">
+          <div id="pelaaja-1"></div>
+          <div id="pisteet-1" class="points"></div>
+          <div class="vuoro" id="vuoro1"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-2"></div>
+          <div id="pisteet-2" class="points"></div>
+          <div class="vuoro" id="vuoro2"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-3"></div>
+          <div id="pisteet-3" class="points"></div>
+          <div class="vuoro" id="vuoro3"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-4"></div>
+          <div id="pisteet-4" class="points"></div>
+          <div class="vuoro" id="vuoro4"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-5"></div>
+          <div id="pisteet-5" class="points"></div>
+          <div class="vuoro" id="vuoro5"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-6"></div>
+          <div id="pisteet-6" class="points"></div>
+          <div class="vuoro" id="vuoro6"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-7"></div>
+          <div id="pisteet-7" class="points"></div>
+          <div class="vuoro" id="vuoro7"></div>
+      </div>
+  
+      <div class="pelaaja">
+          <div id="pelaaja-8"></div>
+          <div id="pisteet-8" class="points"></div>
+          <div class="vuoro" id="vuoro8"></div>
+      </div>
+    </div>
+</div>
+
+
+
+<div class="sectionMiddle">
+  <div class="main">
+    <div id="die1" class="dice">0</div>
+    <div id="die2" class="dice">0</div>
+    <button onclick="rollDice()">Heitä noppaa</button> <br>
+    <button onclick="endTurn()">Lopeta vuoro</button>
+  </div>
+          <span class="bruh" id="status"></span>
+      </div>
+<script src="2nopanjs.js"></script>
+</body>
+</html>
