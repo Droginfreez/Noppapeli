@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function()  {
 }, false);
 
 
+
 function pelaajienMaara() {
  maara.push ((prompt("Syötä pelaajien määrä numerona, maks 8", "")));
 pelaajienNimet();
@@ -107,7 +108,7 @@ function endTurn() {
   if (turn >= maara) {
   vuoronVaihto();
     } else {
-        document.getElementById("status").innerHTML = "Vuoro vaihtuu";
+        document.getElementById("status").innerHTML = "Vuoro vaihtuu.";
         turn = turn +1;
         tempScore=0;
         
@@ -120,7 +121,7 @@ function vuoronVaihto() {
         round = round + 1;
         tempScore=0;
         turn = 1;
-        document.getElementById("status").innerHTML = "Uusi kierros";
+        document.getElementById("status").innerHTML = "Uusi kierros.";
         document.getElementById("round").innerHTML = round;
         document.getElementById("tempScore").innerHTML = tempScore;
       document.getElementById("turn").innerHTML = turn;

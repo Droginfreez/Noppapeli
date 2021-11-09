@@ -13,6 +13,7 @@ var nimet = [];
 var i;
 var o = 1;
 var maara = [];
+
 document.addEventListener('DOMContentLoaded', function()  {
   pelaajienMaara();
 }, false);
@@ -72,12 +73,13 @@ function rollDice(){
     tempScore=tempScore+d1;
     document.getElementById("tempScore").innerHTML = tempScore;
 }
+
 }
 
 
 function endTurn() {
   
-  document.getElementById("status").innerHTML = "Vuoro vaihtuu";
+  document.getElementById("status").innerHTML = "Vuoro vaihtuu.";
   lisaapisteet(tempScore);
   voittiko();
   if (turn >= maara) {
@@ -95,7 +97,7 @@ function vuoronVaihto() {
         round = round + 1;
         tempScore=0;
         turn = 1;
-        document.getElementById("status").innerHTML = "Uusi kierros";
+        document.getElementById("status").innerHTML = "Uusi kierros.";
         document.getElementById("round").innerHTML = round;
         document.getElementById("tempScore").innerHTML = tempScore;
       document.getElementById("turn").innerHTML = turn;
@@ -155,6 +157,7 @@ function paivitaPisteet(){
   if(maara >= 1){
       document.getElementById("pisteet-1").innerHTML = pisteet1;
   }
+
 
 }
 function voittiko() {
