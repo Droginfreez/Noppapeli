@@ -21,16 +21,16 @@ document.addEventListener('DOMContentLoaded', function()  {
 
 
 function pelaajienMaara() {
- maara.push ((prompt("Sy√∂t√§ pelaajien m√§√§r√§ numerona, maks 8", "")));
+ maara.push ((prompt("Syˆt‰ pelaajien m‰‰r‰ numerona, maks 8", "")));
 pelaajienNimet();
 }
 
 function pelaajienNimet() {
-  if(maara > 8) {alert("peliss√§ voi olla enint√§√§n 8 pelaajaa!")
+  if(maara > 8) {alert("peliss‰ voi olla enint‰‰n 8 pelaajaa!")
 return false;} else {}
 for (i = 0; i < maara; i++) {
   var  pisteet1 = [];
-    nimet.push ((prompt("Sy√∂t√§ pelaajan " + o++ + " nimi" , "")));
+    nimet.push ((prompt("Syˆt‰ pelaajan " + o++ + " nimi" , "")));
    
 }
 
@@ -77,7 +77,7 @@ if(d1 == d2 && noppientulos !=2){
     tuplat();
     }
 else if (d1==d2 && noppientulos==2){
-    document.getElementById("status").innerHTML = "Tupla ykk√∂set, saat 25 pistett√§!"; 
+    document.getElementById("status").innerHTML = "Tupla ykkˆset, saat 25 pistett‰!"; 
     tempScore = tempScore +25;
     document.getElementById("tempScore").innerHTML = tempScore;
     tuplia=tuplia+1;
@@ -129,7 +129,7 @@ function vuoronVaihto() {
 
     function tuplat() {
         if (tuplia >= 3 && turn < maara) {
-            document.getElementById("status").innerHTML = "Sait 3 tuplaa per√§kk√§in, vuoro vaihtuu etk√§ saa pisteit√§!";
+            document.getElementById("status").innerHTML = "Sait 3 tuplaa per‰kk‰in, vuoro vaihtuu etk‰ saa pisteit‰!";
             tempScore = 0;
             turn = turn +1;
            tuplia = 0;
@@ -138,7 +138,7 @@ function vuoronVaihto() {
       document.getElementById("turn").innerHTML = turn;
             
         } else if (tuplia >= 3 && turn >= maara) {
-            document.getElementById("status").innerHTML = "Sait 3 tuplaa per√§kk√§in, uusi kierros alkaa etk√§ saa pisteit√§!";
+            document.getElementById("status").innerHTML = "Sait 3 tuplaa per‰kk‰in, uusi kierros alkaa etk‰ saa pisteit‰!";
             tempScore = 0;
             turn = 1;
             round = round +1;

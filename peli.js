@@ -20,16 +20,16 @@ document.addEventListener('DOMContentLoaded', function()  {
 
 
 function pelaajienMaara() {
- maara.push ((prompt("Sy√∂t√§ pelaajien m√§√§r√§ numerona, maks 8", "")));
+ maara.push ((prompt("Syˆt‰ pelaajien m‰‰r‰ numerona, maks 8", "")));
 pelaajienNimet();
 }
 
 function pelaajienNimet() {
-  if(maara > 8) {alert("peliss√§ voi olla enint√§√§n 8 pelaajaa!")
+  if(maara > 8) {alert("peliss‰ voi olla enint‰‰n 8 pelaajaa!")
 return false;} else {}
 for (i = 0; i < maara; i++) {
   var  pisteet1 = [];
-    nimet.push ((prompt("Sy√∂t√§ pelaajan " + o++ + " nimi" , "")));
+    nimet.push ((prompt("Syˆt‰ pelaajan " + o++ + " nimi" , "")));
    
 }
 
