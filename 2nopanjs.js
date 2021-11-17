@@ -36,6 +36,7 @@ for (i = 0; i < maara; i++) {
 
 lisaaPelaajat();
 paivitaPisteet();
+vuoro();
 }
 
 
