@@ -111,7 +111,7 @@ function endTurn() {
         document.getElementById("status").innerHTML = "Vuoro vaihtuu.";
         turn = turn +1;
         tempScore=0;
-        
+        vuoro();
         document.getElementById("tempScore").innerHTML = tempScore;
         document.getElementById("turn").innerHTML = turn;
           }
@@ -121,6 +121,7 @@ function vuoronVaihto() {
         round = round + 1;
         tempScore=0;
         turn = 1;
+        vuoro();
         document.getElementById("status").innerHTML = "Uusi kierros.";
         document.getElementById("round").innerHTML = round;
         document.getElementById("tempScore").innerHTML = tempScore;
@@ -240,4 +241,44 @@ function voittiko() {
         location. reload()
     }
     
+}
+function vuoro() {
+    if (turn == 1) {
+        document.getElementById("vuoro2").innerHTML = "";
+        document.getElementById("vuoro3").innerHTML = "";
+        document.getElementById("vuoro4").innerHTML = "";
+        document.getElementById("vuoro5").innerHTML = "";
+        document.getElementById("vuoro6").innerHTML = "";
+        document.getElementById("vuoro7").innerHTML = "";
+        document.getElementById("vuoro8").innerHTML = "";
+        document.getElementById("vuoro1").innerHTML = "Vuoro";
+    }
+    if (turn == 2) {
+        document.getElementById("vuoro1").innerHTML = "";
+        document.getElementById("vuoro2").innerHTML = "Vuoro";
+    }
+    if (turn == 3) {
+        document.getElementById("vuoro2").innerHTML = "";
+        document.getElementById("vuoro3").innerHTML = "Vuoro";
+    }
+    if (turn == 4) {
+        document.getElementById("vuoro3").innerHTML = "";
+        document.getElementById("vuoro4").innerHTML = "Vuoro";
+    }
+    if (turn == 5) {
+        document.getElementById("vuoro4").innerHTML = "";
+        document.getElementById("vuoro5").innerHTML = "Vuoro";
+    }
+    if (turn == 6) {
+        document.getElementById("vuoro5").innerHTML = "";
+        document.getElementById("vuoro6").innerHTML = "Vuoro";
+    }
+    if (turn == 7) {
+        document.getElementById("vuoro6").innerHTML = "";
+        document.getElementById("vuoro7").innerHTML = "Vuoro";
+    }
+    if (turn == 8) {
+        document.getElementById("vuoro7").innerHTML = "";
+        document.getElementById("vuoro8").innerHTML = "Vuoro";
+    }
 }
